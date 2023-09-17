@@ -4,26 +4,55 @@
 
 /* the code below is a shorthand syntax for the $(document).ready() function. 
 It is used to execute code when the DOM (Document Object Model) is fully loaded and ready to be manipulated. */
+
+
+
+
 $(function () {
+    for (let i = 9; i <= 17; i++) {
+        $(`#hour-`+ i).children('textarea').text(localStorage.getItem(`hour-${i}`));
+    };
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. 
-    let hour9 = $('#hour-9');
 
-    hour9.on('click', function (event) {
-        event.preventDefault();
+    // let hour9 = $('#hour-9');
+
+    // hour9.on('click', function (event) {
+    //     event.preventDefault();
         
-        let text9 = $('#text-9');
-        let input9 = text9.val();
+    //     let text9 = $('#text-9');
+    //     let input9 = text9.val();
 
-        let showInput9 = localStorage.getItem('scheduled-event');
-        
-        localStorage.getItem('scheduled-event');
-        text9.text(showInput9);
-        localStorage.setItem('scheduled-event', input9);
+    //     let showInput9 = JSON.parse(localStorage.getItem('scheduled-event')) || [];;
 
-        console.log(localStorage.getItem('scheduled-event'));
-    });
+    //     localStorage.getItem('scheduled-event');
+    //     text9.text(showInput9);
+    //     localStorage.setItem('scheduled-event', input9);
+
+    //     console.log(localStorage.getItem('scheduled-event'));
+    // });
+
+let save = $('.saveBtn');
+
+save.on('click', function () {
+// console.log(this);
+// console.log($(this).siblings());
+// console.log($(this).siblings('textarea'));
+
+let userText = $(this).siblings('textarea').val();
+let scheduleId = $(this).parent().attr('id');
+let textDiv = $(this).siblings('textarea');
+// console.log(userText);
+
+// console.log($(this).parent());
+// console.log($(this).parent().attr('id'));
+
+
+localStorage.setItem(scheduleId, userText)
+
+
+});
 
     /* HINT: What does `this` reference in the click listener function? 
     How can DOM traversal be used to get the "hour-x" id of the
