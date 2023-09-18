@@ -34,6 +34,7 @@ $(function () {
     } else {
         'hour-${i}`.addClass('future')
     }
+    *can we put `hour-${i}` in a variable? I tried but code wouldn't display properly
     */
 
 
