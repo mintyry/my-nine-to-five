@@ -30,19 +30,20 @@ textarea {
     color: #000000;
     border-top: 1px dashed #000000;
 }
-
+/* changed colors out of personal preference;
+instructor OK'd and said to leave note for graders. */
 .past {
-    background-color: #d3d3d3;
+    background-color: #53746b;
     color: white;
 }
 
 .present {
-    background-color: #ff6961;
+    background-color: #07fc9a;
     color: white;
 }
 
 .future {
-    background-color: #77dd77;
+    background-color: #aed577;
     color: white;
 }
 
