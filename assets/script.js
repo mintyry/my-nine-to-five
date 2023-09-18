@@ -14,7 +14,7 @@ We access what we need and use .text in order to display content in the area we 
 
 $(function () {
 
-   for (let i = 9; i <= 17; i++) {
+   /* for (let i = 9; i <= 17; i++) {
         $(`#hour-${i}`).children('textarea').text(localStorage.getItem(`hour-${i}`));
     };
 
@@ -33,6 +33,21 @@ $(function () {
         // console.log(userText);
         // console.log($(this).parent());
         // console.log($(this).parent().attr('id'));
+    });*/ 
+
+
+    let hour9 = $('#hour-9');
+    let text9 = $('#text-9');
+    let showInput9 = localStorage.getItem('scheduled-event');
+    text9.text(showInput9);
+
+    hour9.on('click', function (event) {
+        event.preventDefault();
+        
+        let input9 = text9.val();
+        localStorage.setItem('scheduled-event', input9);
+
+        console.log(localStorage.getItem('scheduled-event'));
     });
 
     /* HINT: What does `this` reference in the click listener function? 
