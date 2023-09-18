@@ -25,6 +25,18 @@ User's entry persists upon page refresh because getItem and .text are outside of
 
 $(function () {
 
+    // change color of textarea; pseudocode:
+    //maybe if statement goes in for loop
+    /* if (time === now) {
+        `#hour-${i}`.addClass('present')
+    } else if (time < now) {
+        'hour-${i}`.addClass('past')
+    } else {
+        'hour-${i}`.addClass('future')
+    }
+    */
+
+
     for (let i = 9; i <= 17; i++) {
         $(`#hour-${i}`).children('textarea').text(localStorage.getItem(`hour-${i}`));
     };
