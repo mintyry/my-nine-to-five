@@ -10,11 +10,12 @@ which ensures code isn't run until bwoser has finished rendering all HTMl.
 For loop will run through hours 9-17, looping each i for the subsequent id/hour.
 We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
 but isn't a bootstrap selector; we also use 'this.'
-We access what we need and use .text in order to display content in the area we selected. */
+We access what we need and use .text in order to display content in the area we selected. 
+User's entry persists upon page refresh because getItem and .text are outside of click function */
 
 $(function () {
 
-   /* for (let i = 9; i <= 17; i++) {
+    for (let i = 9; i <= 17; i++) {
         $(`#hour-${i}`).children('textarea').text(localStorage.getItem(`hour-${i}`));
     };
 
@@ -33,21 +34,6 @@ $(function () {
         // console.log(userText);
         // console.log($(this).parent());
         // console.log($(this).parent().attr('id'));
-    });*/ 
-
-
-    let hour9 = $('#hour-9');
-    let text9 = $('#text-9');
-    let showInput9 = localStorage.getItem('scheduled-event');
-    text9.text(showInput9);
-
-    hour9.on('click', function (event) {
-        event.preventDefault();
-        
-        let input9 = text9.val();
-        localStorage.setItem('scheduled-event', input9);
-
-        console.log(localStorage.getItem('scheduled-event'));
     });
 
     /* HINT: What does `this` reference in the click listener function? 
