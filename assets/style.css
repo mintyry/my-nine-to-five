@@ -1,16 +1,12 @@
 /* applies font styles to body of page; iIalso added bg image */
-
+ /* changed colors out of personal preference;
+instructor OK'd and said to leave note for graders. */
 body {
     background-image:linear-gradient(#347976, #9dd4bc, white); 
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
 
-/* header {
-    color:#f4dee5;
-    background-image: linear-gradient(rgba(67, 255, 20, 0.5), rgba(201, 248, 175, 0.5), rgba(255, 255, 255, 0.5));
-} */
-/* styles the text box for user to type in/enter schedule event */
 textarea {
     background: transparent;
     border: none;
