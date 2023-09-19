@@ -20,34 +20,62 @@ which ensures code isn't run until bwoser has finished rendering all HTMl. */
 
 $(function () {
 
-    // change color of textarea; pseudocode:
-    //maybe if statement goes in for loop
-    /* if (time === now) {
-        `#hour-${i}`.addClass('present')
-    } else if (time < now) {
-        'hour-${i}`.addClass('past')
-    } else {
-        'hour-${i}`.addClass('future')
-    }
-    *can we put `hour-${i}` in a variable? I tried but code wouldn't display properly
-    */
-function showDate () {
-    let dayEl = $('#currentDay');
-    let day = dayjs();
+    let currentHour = dayjs().format('H');
+    console.log(currentHour);
 
-    dayEl.text(day.format('M.DD.YYYY, hh:mm:ss a'));
+
+    // maybe if statement goes in for loop
+    // if (i === currentHour) {
+    //     `#hour-${i}`.addClass('present')
+    // }
+
+    // else if (time < now) {
+    //     'hour-${i}`.addClass('past')
+    // } else {
+    //     'hour-${i}`.addClass('future')
+    // }
+
+    /* can we put `hour-${i}` in a variable? I tried but code wouldn't display properly
+    */
+
+
+function checkTime () {
+   let timeDiv = $('.time-block');
+  
+   console.log(timeDiv); // yields all time divs
+//    console.log(hourId); //yields hour-9
+
+   timeDiv.each(function () {
+    let hourId = timeDiv.attr('id');
+    console.log(hourId)
+   });
 }
 
-showDate();
-setInterval(showDate, 500);
-/* For loop will run through hours 9-17, looping each i for the subsequent id/hour.
- We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
- but isn't a bootstrap selector; we also use 'this.'
- We access what we need and use .text in order to display content in the area we selected. 
- User's entry persists upon page refresh because getItem and .text are outside of click function */
+checkTime();
+
+
+
+    function showDate() {
+        let dayEl = $('#currentDay');
+        let day = dayjs();
+        let now = day.format('M.DD.YYYY, hh:mm:ss a');
+
+        dayEl.text(now);
+    };
+
+    showDate();
+    setInterval(showDate, 200);
+
+    /* For loop will run through hours 9-17, looping each i for the subsequent id/hour.
+     We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
+     but isn't a bootstrap selector; we also use 'this.'
+     We access what we need and use .text in order to display content in the area we selected. 
+     User's entry persists upon page refresh because getItem and .text are outside of click function */
     for (let i = 9; i <= 17; i++) {
         $(`#hour-${i}`).children('textarea').text(localStorage.getItem(`hour-${i}`));
-    };
+    }
+
+
 
     let save = $('.saveBtn');
 
