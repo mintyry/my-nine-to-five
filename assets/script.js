@@ -35,7 +35,7 @@ function showDate () {
     let dayEl = $('#currentDay');
     let day = dayjs();
 
-    dayEl.text(day.format('MM.DD.YYYY, hh:mm:ss a'));
+    dayEl.text(day.format('M.DD.YYYY, hh:mm:ss a'));
 }
 
 showDate();
