@@ -20,8 +20,7 @@ which ensures code isn't run until bwoser has finished rendering all HTMl. */
 
 $(function () {
 
-    let currentHour = dayjs().format('H');
-    console.log(currentHour);
+   
 
 
     // maybe if statement goes in for loop
@@ -40,15 +39,29 @@ $(function () {
 
 
 function checkTime () {
+let currentHour = dayjs().format('H');
+    console.log(currentHour);
+
    let timeDiv = $('.time-block');
-  
+    console.log(timeDiv[1]);
+
    console.log(timeDiv); // yields all time divs
 //    console.log(hourId); //yields hour-9
 
    timeDiv.each(function () {
-    let hourId = timeDiv.attr('id');
+    // let hourId = $(this).attr('id');
+    let hourId = parseInt($(this).attr('id').split('-')[1]);
+    // console.log(this)
     console.log(hourId)
+
+    if (hourId === currentHour) {
+        $(this).addClass('present');
+    }
+
+    console.log(this);
    });
+
+  
 }
 
 checkTime();
@@ -58,7 +71,7 @@ checkTime();
     function showDate() {
         let dayEl = $('#currentDay');
         let day = dayjs();
-        let now = day.format('M.DD.YYYY, hh:mm:ss a');
+        let now = day.format('M.DD.YYYY, h:mm:ss a');
 
         dayEl.text(now);
     };
