@@ -1,6 +1,5 @@
 /* GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
+
 
 WHEN I view the time blocks for that day
 THEN each time block is color-coded to indicate whether it is in the past, present, or future
@@ -16,12 +15,8 @@ THEN each time block is color-coded to indicate whether it is in the past, prese
 // local storage. 
 
 /* $ function () {}; is a shorthand syntax for the $(document).ready() function., 
-which ensures code isn't run until bwoser has finished rendering all HTMl.
-For loop will run through hours 9-17, looping each i for the subsequent id/hour.
-We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
-but isn't a bootstrap selector; we also use 'this.'
-We access what we need and use .text in order to display content in the area we selected. 
-User's entry persists upon page refresh because getItem and .text are outside of click function */
+which ensures code isn't run until bwoser has finished rendering all HTMl. */
+
 
 $(function () {
 
@@ -36,8 +31,20 @@ $(function () {
     }
     *can we put `hour-${i}` in a variable? I tried but code wouldn't display properly
     */
+function showDate () {
+    let dayEl = $('#currentDay');
+    let day = dayjs();
 
+    dayEl.text(day.format('MM.DD.YYYY, hh:mm:ss a'));
+}
 
+showDate();
+setInterval(showDate, 500);
+/* For loop will run through hours 9-17, looping each i for the subsequent id/hour.
+ We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
+ but isn't a bootstrap selector; we also use 'this.'
+ We access what we need and use .text in order to display content in the area we selected. 
+ User's entry persists upon page refresh because getItem and .text are outside of click function */
     for (let i = 9; i <= 17; i++) {
         $(`#hour-${i}`).children('textarea').text(localStorage.getItem(`hour-${i}`));
     };

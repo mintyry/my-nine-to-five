@@ -1,8 +1,15 @@
-/* applies font styles to body of page */
+/* applies font styles to body of page; iIalso added bg image */
+
 body {
+    background-image:linear-gradient(#69907f, #9dd4bc, white); 
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
+
+/* header {
+    color:#f4dee5;
+    background-image: linear-gradient(rgba(67, 255, 20, 0.5), rgba(201, 248, 175, 0.5), rgba(255, 255, 255, 0.5));
+} */
 /* styles the text box for user to type in/enter schedule event */
 textarea {
     background: transparent;
@@ -22,13 +29,13 @@ textarea {
 }
 
 .row {
-    border-top: 1px solid white;
+    border-top: 1px solid #ed87a6;
 }
 
 .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
+    background-color: #ef87a6;
+    color: #ffffff;
+    border-top: 1px dashed #ef87a6;
 }
 /* changed colors out of personal preference;
 instructor OK'd and said to leave note for graders. */
@@ -51,7 +58,7 @@ instructor OK'd and said to leave note for graders. */
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
+    background-color: #ef87a6;
     color: white;
 }
 
