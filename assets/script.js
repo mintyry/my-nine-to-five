@@ -46,7 +46,7 @@ $(function () {
 
     showDate();
     //will display a running clock
-    setInterval(showDate, 1000);
+    setInterval(showDate, 500);
 
     /* For loop will run through hours 9-17, looping each i for the subsequent id/hour.
      We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
