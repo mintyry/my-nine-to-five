@@ -39,9 +39,11 @@ $(function () {
     function showDate() {
         let dayEl = $('#currentDay');
         let day = dayjs();
-        let now = day.format('dddd, M.DD.YYYY, h:mm:ss a');
+        let now = day.format('dddd, M.DD.YYYY, h:mm:ss[&nbsp;]a');
 
-        dayEl.text(now);
+        now = now.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+        dayEl.html(now);
     };
 
     showDate();
