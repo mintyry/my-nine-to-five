@@ -23,15 +23,15 @@
         <h1 class="display-3">Work Day Scheduler</h1>
         <!-- lead class makes paragraphs stand out. -->
         <p class="lead">A simple calendar app for scheduling your work day</p>
+        <!-- empty container for where we will use dayjs in js to display date/time -->
         <p id="currentDay" class="lead"></p>
     </header>
     <div class="container-lg px-5">
-
         <!-- Deleted the past, present, and future classes, 
-            because they will be dynamically updated to have one of them depending on what time it is via js-->
+            because they will be dynamically updated via js to have one of them depending on what time it is-->
         <div id="hour-9" class="row time-block ">
             <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-            <textarea id = "text-9" class="col-8 col-md-10 description" rows="3"> </textarea>
+            <textarea id="text-9" class="col-8 col-md-10 description" rows="3"> </textarea>
             <button class="btn saveBtn col-2 col-md-1" aria-label="save">
                 <i class="fas fa-save" aria-hidden="true"></i>
             </button>

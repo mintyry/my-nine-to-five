@@ -1,8 +1,8 @@
-/* applies font styles to body of page; iIalso added bg image */
- /* changed colors out of personal preference;
+/* applies font styles to body of page; I also added bg image */
+/* changed colors out of personal preference;
 instructor OK'd and said to leave note for graders. */
 body {
-    background-image:linear-gradient(#347976, #9dd4bc, white); 
+    background-image: linear-gradient(#347976, #9dd4bc, white);
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
@@ -15,6 +15,7 @@ textarea {
     border-left: 1px solid black;
     padding: 10px;
 }
+
 /* following code applies styles to various classes */
 .description {
     white-space: pre-wrap;
@@ -33,6 +34,7 @@ textarea {
     color: #ffffff;
     border-top: 1px dashed #ef87a6;
 }
+
 /* changed colors out of personal preference;
 instructor OK'd and said to leave note for graders. */
 .past {

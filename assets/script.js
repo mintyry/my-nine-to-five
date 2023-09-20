@@ -1,9 +1,9 @@
-/* $ function () {}; is a shorthand syntax for the $(document).ready() function., 
+/* $ function () {}; is a shorthand syntax for the $(document).ready() function, 
 which ensures code isn't run until bwoser has finished rendering all HTMl. */
 $(function () {
     // Note: I keep console.logs in here but commented out to demonstrate any testing that proved to be helpful
     // This function checks what time it is and then compares that time to the div's hour (which we parsed out of the id string)
-    // The if statement in the function will then dynamically add classes to apply corresponding attributes.
+    // The if statement in the function will then dynamically add classes to apply corresponding classes/css properties.
     function checkTime() {
         let currentHour = dayjs().format('H');
         // console.log(typeof currentHour); // string!
@@ -48,7 +48,7 @@ $(function () {
     //will display a running clock
     setInterval(showDate, 500);
 
-    /* For loop will run through hours 9-17, looping each i for the subsequent id/hour.
+    /* For loop will run through hours 9-17, looping through each i for the subsequent id/hour.
      We access elements by traversing DOM rather than hardcoding for each hour; we do this by accessing saveBtn class, which they all share,
      but isn't a bootstrap selector; we also use 'this.'
      We access what we need and use .text in order to display content in the area we selected. 
