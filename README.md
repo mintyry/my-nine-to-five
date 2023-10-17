@@ -30,4 +30,4 @@ Starter code in HTML, CSS, and JS provided by edX.
 In script.js, Learning Assitant Mampuru helped construct line 20
 
 ## Deployed Application Link
-Please view the deployed scheduler app [here](https://mintyry.github.io/schedule-nine-to-five/)!
+Please view the deployed scheduler app [here](https://mintyry.github.io/my-nine-to-five/)!
