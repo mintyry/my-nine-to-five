@@ -1,4 +1,4 @@
-# Schedule-Nine-to-Five
+# My Nine-to-Five
 
 ## Description
 My motivation for this project was to allow the end-user to schedule their day easily with dynamic features that reminded them what time it was and when their scheduled events have passed or are still to come.
